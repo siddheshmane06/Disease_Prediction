@@ -66,6 +66,10 @@ def predict(image):
 
 
 def app():
+    st.set_page_config(
+        page_title="Healthify - Pneumonia Detection",
+        page_icon="🏥",
+    )
     st.title("Pneumonia Detection")
     st.markdown("This app detects if the patient has viral, bacterial or no Pneumonia")
     st.markdown("#")

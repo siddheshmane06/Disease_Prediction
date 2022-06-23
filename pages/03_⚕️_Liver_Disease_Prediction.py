@@ -6,6 +6,10 @@ from config import doctor_search
 
 
 def liver_app():
+    st.set_page_config(
+        page_title="Healthify - Liver Disease Prediction",
+        page_icon="🏥",
+    )
     st.title("Liver Disease Diagnosis")
 
     st.subheader(

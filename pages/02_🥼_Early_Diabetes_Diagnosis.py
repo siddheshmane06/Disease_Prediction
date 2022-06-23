@@ -52,6 +52,10 @@ def predict_early_diabetes(
 
 
 def diabetes_app():
+    st.set_page_config(
+        page_title="Healthify - Diabetes Diagnosis",
+        page_icon="🏥",
+    )
     st.subheader(
         "Please choose below options as per your knowledge and click on 'Predict' to know your status"
     )

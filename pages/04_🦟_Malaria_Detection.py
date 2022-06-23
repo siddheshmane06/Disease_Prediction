@@ -56,6 +56,10 @@ class MosquitoNet(nn.Module):
 
 
 def malaria_app():
+    st.set_page_config(
+        page_title="Healthify - Malaria Detection",
+        page_icon="🏥",
+    )
     st.title("Malaria Disease Detection from microscopic-cell image")
 
     malaria_model = MosquitoNet()

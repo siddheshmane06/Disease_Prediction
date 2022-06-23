@@ -3,6 +3,14 @@ import streamlit as st
 
 
 def home():
+    st.set_page_config(
+        page_title="Healthify - Home",
+        page_icon="👨‍⚕️",
+    )
+    st.sidebar.info(
+        "**About**: This project is made using publicly available data and comes with no gaurantee. We do not store any of the patient's personal information."
+    )
+
     # st.markdown(f"<h1 style='text-align: center; color: blue; font-size: 50px;'>Healthify</h1>", unsafe_allow_html=True)
     col1, col2, col3 = st.columns([1, 6, 1])
 
