@@ -2,19 +2,7 @@ import config as cfg
 import joblib
 import numpy as np
 import streamlit as st
-
-
-def doctor_search(doctor_type):
-    """
-    Searches the specialist near you
-    """
-    base_url = "https://www.google.com/search?q="
-    query = doctor_type.split(" ")
-    query = "+".join(query)
-    query = f"{query}+near+me"
-    final_url = base_url + query
-
-    return final_url
+from config import doctor_search
 
 
 def predict_early_diabetes(
@@ -199,21 +187,24 @@ def diabetes_app():
             obesity,
         )
         if result == 1:
-            st.subheader("You have high chances of having Diabetes 😔")
+            st.subheader("The patient have high chances of having Diabetes 😔")
 
             st.markdown("---")
+            st.error(
+                "If you are a patient, consult with one of the following doctors immediately"
+            )
             st.subheader("Specialists 👨‍⚕")
+
             st.write(
                 "Click on the specialists to get the specialists nearest to your location 📍"
             )
             pcp = doctor_search("Primary Care Provider")
-            endocrio = doctor_search("Endocrinologist")
+            infec = doctor_search("Endocrinologist")
             st.markdown(f"- [Primary Care Doctor]({pcp}) 👨‍⚕")
-            st.markdown(f"- [Endocrinologist]({endocrio}) 👨‍⚕")
+            st.markdown(f"- [Endocrinologist]({infec}) 👨‍⚕")
             st.markdown("---")
-
         else:
-            st.subheader("Hurray! You don't have Diabetes 😄")
+            st.subheader("The patient does not have Diabetes 😄")
 
 
 if __name__ == "__main__":

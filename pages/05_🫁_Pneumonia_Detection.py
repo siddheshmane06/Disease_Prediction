@@ -3,21 +3,9 @@ import streamlit as st
 import torch
 import torch.nn as nn
 import torchvision
+from config import doctor_search
 from PIL import Image
 from torchvision import transforms
-
-
-def doctor_search(doctor_type):
-    """
-    Searches the specialist near you
-    """
-    base_url = "https://www.google.com/search?q="
-    query = doctor_type.split(" ")
-    query = "+".join(query)
-    query = f"{query}+near+me"
-    final_url = base_url + query
-
-    return final_url
 
 
 def preprocess_image(image):
@@ -104,6 +92,9 @@ def app():
 
             if prediction != 0:
                 st.markdown("---")
+                st.error(
+                    "If you are a patient, consult with one of the following doctors immediately"
+                )
                 st.subheader("Specialists 👨‍⚕")
                 st.write(
                     "Click on the specialist's name to find out the nearest specialist to you ..."

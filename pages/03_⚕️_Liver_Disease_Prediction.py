@@ -2,19 +2,7 @@ import config as cfg
 import joblib
 import numpy as np
 import streamlit as st
-
-
-def doctor_search(doctor_type):
-    """
-    Searches the specialist near you
-    """
-    base_url = "https://www.google.com/search?q="
-    query = doctor_type.split(" ")
-    query = "+".join(query)
-    query = f"{query}+near+me"
-    final_url = base_url + query
-
-    return final_url
+from config import doctor_search
 
 
 def liver_app():
@@ -86,15 +74,18 @@ def liver_app():
         if liver_disease_prob == 1:
             st.subheader("The patient have chances of having a liver disease 😔")
             st.markdown("---")
+            st.error(
+                "If you are a patient, consult with one of the following doctors immediately"
+            )
             st.subheader("Specialists 👨‍⚕")
-            pcp = doctor_search("Primary Care Provider")
-            gastro = doctor_search("Gastroenterologists")
 
             st.write(
                 "Click on the specialists to get the specialists nearest to your location 📍"
             )
+            pcp = doctor_search("Primary Care Provider")
+            infec = doctor_search("Endocrinologist")
             st.markdown(f"- [Primary Care Doctor]({pcp}) 👨‍⚕")
-            st.markdown(f"- [Gastroenterologists]({gastro}) 👨‍⚕")
+            st.markdown(f"- [Gastroenterologists]({infec}) 👨‍⚕")
             st.markdown("---")
         if liver_disease_prob == 2:
 

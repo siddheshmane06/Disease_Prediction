@@ -5,6 +5,7 @@ import joblib
 import numpy as np
 import pandas as pd
 import streamlit as st
+from config import doctor_search
 
 # ------------------------------- Disease Prediction utils -------------------------------------------------
 
@@ -52,19 +53,6 @@ def med_search(medicine):
     url = f"https://www.drugs.com/search.php?searchterm={medicine}"
 
     return url
-
-
-def doctor_search(doctor_type):
-    """
-    Searches the specialist near you
-    """
-    base_url = "https://www.google.com/search?q="
-    query = doctor_type.split(" ")
-    query = "+".join(query)
-    query = f"{query}+near+me"
-    final_url = base_url + query
-
-    return final_url
 
 
 def get_precautions(disease):
