@@ -10,7 +10,7 @@ TRAINED_MODEL_RF = os.path.join(MODELS_DIR, "randomforest_disease_pred.pkl")
 DIABETES_MODEL = os.path.join(MODELS_DIR, "diabetes_early_stage.pkl")
 LIVER_MODEL = os.path.join(MODELS_DIR, "liver.pkl")
 MALARIA_MODEL = os.path.join(MODELS_DIR, "malaria_detection.pt")
-PNEUMONIA_MODEL = os.path.join(MODELS_DIR, "pneumonia.pth")
+PNEUMONIA_MODEL = os.path.join(MODELS_DIR, "pneumonia_resnet50_model.pth")
 
 DISEASE_DATA = os.path.join(DATA_DIR, "disease.json")
 PRECAUTIONS_DATA = os.path.join(DATA_DIR, "precautions.csv")

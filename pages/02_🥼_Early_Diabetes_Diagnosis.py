@@ -200,10 +200,9 @@ def diabetes_app():
         )
         if result == 1:
             st.subheader("You have high chances of having Diabetes 😔")
-            st.subheader(
-                "Please consult with your family doctor or one of the below doctors immediately"
-            )
 
+            st.markdown("---")
+            st.subheader("Specialists 👨‍⚕")
             st.write(
                 "Click on the specialists to get the specialists nearest to your location 📍"
             )
@@ -211,6 +210,7 @@ def diabetes_app():
             endocrio = doctor_search("Endocrinologist")
             st.markdown(f"- [Primary Care Doctor]({pcp}) 👨‍⚕")
             st.markdown(f"- [Endocrinologist]({endocrio}) 👨‍⚕")
+            st.markdown("---")
 
         else:
             st.subheader("Hurray! You don't have Diabetes 😄")

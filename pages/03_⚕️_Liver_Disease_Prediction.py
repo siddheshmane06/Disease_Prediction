@@ -85,17 +85,17 @@ def liver_app():
 
         if liver_disease_prob == 1:
             st.subheader("The patient have chances of having a liver disease 😔")
+            st.markdown("---")
+            st.subheader("Specialists 👨‍⚕")
             pcp = doctor_search("Primary Care Provider")
             gastro = doctor_search("Gastroenterologists")
-            st.subheader(
-                "Please consult with your family doctor or one of the below doctors immediately"
-            )
 
             st.write(
                 "Click on the specialists to get the specialists nearest to your location 📍"
             )
             st.markdown(f"- [Primary Care Doctor]({pcp}) 👨‍⚕")
             st.markdown(f"- [Gastroenterologists]({gastro}) 👨‍⚕")
+            st.markdown("---")
         if liver_disease_prob == 2:
 
             st.subheader(
