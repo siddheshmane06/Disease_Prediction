@@ -4,6 +4,19 @@ import numpy as np
 import streamlit as st
 
 
+def doctor_search(doctor_type):
+    """
+    Searches the specialist near you
+    """
+    base_url = "https://www.google.com/search?q="
+    query = doctor_type.split(" ")
+    query = "+".join(query)
+    query = f"{query}+near+me"
+    final_url = base_url + query
+
+    return final_url
+
+
 def liver_app():
     st.title("Liver Disease Diagnosis")
 
@@ -72,12 +85,23 @@ def liver_app():
 
         if liver_disease_prob == 1:
             st.subheader("The patient have chances of having a liver disease 😔")
+            pcp = doctor_search("Primary Care Provider")
+            gastro = doctor_search("Gastroenterologists")
+            st.subheader(
+                "Please consult with your family doctor or one of the below doctors immediately"
+            )
 
+            st.write(
+                "Click on the specialists to get the specialists nearest to your location 📍"
+            )
+            st.markdown(f"- [Primary Care Doctor]({pcp}) 👨‍⚕")
+            st.markdown(f"- [Gastroenterologists]({gastro}) 👨‍⚕")
         if liver_disease_prob == 2:
 
             st.subheader(
                 "The patient doesn't have any chances of having a liver disease 😄"
             )
+
             st.balloons()
 
 
