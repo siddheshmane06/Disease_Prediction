@@ -60,8 +60,14 @@ def malaria_app():
         page_title="Healthify - Malaria Detection",
         page_icon="🏥",
     )
-    st.title("Malaria Disease Detection from microscopic-cell image")
-
+    st.markdown(
+        f"<h1 style='text-align: center; color: black;'>Malaria Detection</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<h4 style='text-align: center; color: black;'>Upload a microscopic cell image to know if the patient has malaria or not</h4>",
+        unsafe_allow_html=True,
+    )
     malaria_model = MosquitoNet()
     malaria_model.load_state_dict(
         torch.load(cfg.MALARIA_MODEL, map_location=torch.device("cpu"))

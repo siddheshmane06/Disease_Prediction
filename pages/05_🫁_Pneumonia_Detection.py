@@ -70,8 +70,14 @@ def app():
         page_title="Healthify - Pneumonia Detection",
         page_icon="🏥",
     )
-    st.title("Pneumonia Detection")
-    st.markdown("This app detects if the patient has viral, bacterial or no Pneumonia")
+    st.markdown(
+        f"<h1 style='text-align: center; color: black;'>Pneumonia Detection</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<h4 style='text-align: center; color: black;'>Upload a lung X-Ray image to know if the patient has bacteria or viral pneumonia</h4>",
+        unsafe_allow_html=True,
+    )
     st.markdown("#")
     uploaded_image = st.file_uploader("Upload an image to predict")
 

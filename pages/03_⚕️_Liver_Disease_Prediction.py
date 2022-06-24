@@ -10,10 +10,13 @@ def liver_app():
         page_title="Healthify - Liver Disease Prediction",
         page_icon="🏥",
     )
-    st.title("Liver Disease Diagnosis")
-
-    st.subheader(
-        "Enter the details from the patients report to check the chance of liver disease"
+    st.markdown(
+        f"<h1 style='text-align: center; color: black;'>Liver Disease Diagnosis</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<h4 style='text-align: center; color: black;'>Choose below options according to the report to know the patient's status</h4>",
+        unsafe_allow_html=True,
     )
 
     model = joblib.load(cfg.LIVER_MODEL)

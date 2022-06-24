@@ -56,8 +56,13 @@ def diabetes_app():
         page_title="Healthify - Diabetes Diagnosis",
         page_icon="🏥",
     )
-    st.subheader(
-        "Please choose below options as per your knowledge and click on 'Predict' to know your status"
+    st.markdown(
+        f"<h1 style='text-align: center; color: black;'>Early Diabetes Diagnosis</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<h4 style='text-align: center; color: black;'>Choose below options according to the report to know the patient's status</h4>",
+        unsafe_allow_html=True,
     )
 
     age = st.slider("What is your Age?", 0, 110, 25)
