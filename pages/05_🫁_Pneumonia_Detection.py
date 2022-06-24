@@ -75,7 +75,7 @@ def app():
         unsafe_allow_html=True,
     )
     st.markdown(
-        "<h4 style='text-align: center; color: black;'>Upload a lung X-Ray image to know if the patient has bacteria or viral pneumonia</h4>",
+        "<h4 style='text-align: center; color: black;'>Upload a lung X-Ray image to know if the patient has bacterial or viral pneumonia</h4>",
         unsafe_allow_html=True,
     )
     st.markdown("#")
