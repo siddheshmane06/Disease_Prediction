@@ -94,15 +94,15 @@ def app():
             prediction, confidence = predict(uploaded_image)
             print(prediction)
             if prediction == 0:
-                st.subheader("The patient is not suffering from Pneumonia 😄🎉🎉")
+                st.subheader("The patient is not suffering from Pneumonia.")
                 st.subheader(f"Confidence of model: {confidence*100:.2f}%")
-                st.balloons()
+                # st.balloons()
             elif prediction == 1:
-                st.subheader("The patient is suffering from Bacterial Pneumonia 😔")
+                st.subheader("The patient is suffering from Bacterial Pneumonia.")
                 st.subheader(f"Confidence of model: {confidence*100:.2f}%")
 
             elif prediction == 2:
-                st.subheader("The patient is suffering from Viral Pneumonia 😔")
+                st.subheader("The patient is suffering from Viral Pneumonia.")
                 st.subheader(f"Confidence of model: {confidence*100:.2f}%")
 
             if prediction != 0:
