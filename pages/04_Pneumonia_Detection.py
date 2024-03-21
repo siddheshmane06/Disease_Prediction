@@ -72,7 +72,7 @@ def predict(image):
 
 def app():
     st.set_page_config(
-        page_title="Healthify - Pneumonia Detection",
+        page_title="HealthPred - Pneumonia Detection",
         page_icon="🏥",
     )
     st.markdown(
