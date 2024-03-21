@@ -12,7 +12,7 @@ from config import doctor_search
 
 def liver_app():
     st.set_page_config(
-        page_title="Healthify - Liver Disease Prediction",
+        page_title="HealthPred - Liver Disease Prediction",
         page_icon="🏥",
     )
     st.markdown(
