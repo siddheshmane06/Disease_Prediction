@@ -148,7 +148,7 @@ def fetch_disease_info(disease=None):
 
 def disease_app():
     st.set_page_config(
-        page_title="Healthify - Disease Diagnosis",
+        page_title="HealthPred - Disease Diagnosis",
         page_icon="🏥",
     )
     st.markdown(
